@@ -10,6 +10,8 @@ module com.example.autocamper {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires java.desktop;
 
     opens com.example.autocamper to javafx.fxml;
     exports com.example.autocamper;
