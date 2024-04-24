@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0"
+            prefWidth="800.0" style="-fx-background-color: #D8E4EC;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autocamper.RegisterBookingController">
+    <Button fx:id="SaveButton" layoutX="355.0" layoutY="477.0" mnemonicParsing="false" prefHeight="25.0"
+            prefWidth="93.0" text="Save"/>
+    <TextField fx:id="NameTextField" layoutX="269.0" layoutY="97.0" prefHeight="25.0" prefWidth="264.0" text="Name"/>
+    <TextField fx:id="EmailTextField" layoutX="268.0" layoutY="180.0" prefHeight="25.0" prefWidth="264.0" text="Email"/>
+    <CheckBox fx:id="BasicInsuranceCheck" layoutX="268.0" layoutY="410.0" mnemonicParsing="false" prefHeight="17.0"
+              prefWidth="264.0" text="Basic Insurance"/>
+    <MenuButton fx:id="AutoCamperTypeMenu" layoutX="268.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0"
+                prefWidth="264.0" text="AutoCamper Type">
+        <items>
+            <MenuItem mnemonicParsing="false" text="Basic"/>
+            <MenuItem mnemonicParsing="false" text="Standard"/>
+            <MenuItem mnemonicParsing="false" text="Luxury"/>
+        </items>
+    </MenuButton>
+    <DatePicker fx:id="DateOfBookingPicker" layoutX="268.0" layoutY="260.0" prefHeight="25.0" prefWidth="264.0"
+                promptText="Date of booking"/>
+    <MenuButton fx:id="AutoCamperMenu" layoutX="268.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0"
+                prefWidth="264.0" text="AutoCamper">
+        <items>
+            <MenuItem mnemonicParsing="false" text="Action 1"/>
+            <MenuItem mnemonicParsing="false" text="Action 2"/>
+        </items>
+    </MenuButton>
+    <TextField fx:id="AddressTextField" layoutX="268.0" layoutY="220.0" prefHeight="25.0" prefWidth="264.0"
+               text="Address"/>
+    <Button id="ReturnButton" fx:id="ReturnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+            prefHeight="25.0" prefWidth="81.0" text="Return" onAction="#handleReturnButton">
+        <font>
+            <Font name="Leelawadee UI" size="12.0"/>
+        </font>
+    </Button>
+    <CheckBox fx:id="SuperCoverPlusCheck" layoutX="268.0" layoutY="436.0" mnemonicParsing="false" prefHeight="17.0"
+              prefWidth="264.0" text="Super Cover Plus"/>
+    <Label alignment="CENTER" layoutX="568.0" layoutY="54.0" prefHeight="25.0" prefWidth="200.0"
+           text="Available autocampers" textAlignment="CENTER">
+        <font>
+            <Font name="Leelawadee UI" size="18.0"/>
+        </font>
+    </Label>
+    <TableView layoutX="568.0" layoutY="95.0" prefHeight="304.0" prefWidth="200.0">
+        <columns>
+            <TableColumn prefWidth="88.0" text="Type"/>
+            <TableColumn fx:id="AvailableAutoCampersTable" prefWidth="111.0" text="License plate"/>
+        </columns>
+    </TableView>
+</AnchorPane>
