@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
         showStartPage();
     }
 
-    private void showStartPage() {
+    public void showStartPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StartPage.fxml"));
             Parent root = loader.load();
