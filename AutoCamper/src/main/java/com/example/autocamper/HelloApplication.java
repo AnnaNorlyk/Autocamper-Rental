@@ -15,31 +15,31 @@ public class HelloApplication extends Application {
         showStartPage();
     }
 
-    public void showStartPage() {
+    private void showStartPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StartPage.fxml"));
             Parent root = loader.load();
             StartPageController controller = loader.getController();
             controller.setMainApplication(this);
-            primaryStage.setScene(new Scene(root, 800, 545));
-            primaryStage.setTitle("AutoCamper");
+            primaryStage.setScene(new Scene(root, 1280, 800));
+            primaryStage.setTitle("Welcome to AutoCamper");
             primaryStage.show();
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            e.printStackTrace();
         }
     }
 
-    public void showRegisterBookingPage() {
+    public void showBookingPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("RegisterBooking.fxml"));
             Parent root = loader.load();
             RegisterBookingController controller = loader.getController();
-            controller.setMainApplication(this); // This sets the application reference
-            primaryStage.setScene(new Scene(root, 800, 545));
-            primaryStage.setTitle("Register Booking");
+            controller.setMainApplication(this);
+            primaryStage.setScene(new Scene(root, 1280, 800));
+            primaryStage.setTitle("Book Your Camper");
             primaryStage.show();
         } catch (Exception e) {
-            System.out.println("Error loading Register Booking Page: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

@@ -29,14 +29,6 @@ public class RegisterBookingWallet {
         return connection;
     }
 
-
-
-
-
-
-
-
-
     public static void rentRV(String name, String address, String email, int autocamperType, Date startDate, Date endDate) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
