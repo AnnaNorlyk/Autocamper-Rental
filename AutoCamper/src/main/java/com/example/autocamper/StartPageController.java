@@ -25,9 +25,6 @@ public class StartPageController {
         helloApplication.showRegisterBookingPage();
         }
 
-    public void handleNewBooking(ActionEvent actionEvent) {
-    }
-
     public void handleDeleteBooking(ActionEvent actionEvent) {
     }
 }

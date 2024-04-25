@@ -204,5 +204,6 @@ public class RegisterBookingController {
     }
 
 
-
+    public void handleAutoCamperTypeSelection(ActionEvent actionEvent) {
+    }
 }
