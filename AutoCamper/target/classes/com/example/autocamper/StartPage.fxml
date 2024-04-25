@@ -17,6 +17,7 @@
         </Label>
         <TableView fx:id="C" layoutX="53.0" layoutY="93.0" prefHeight="362.0" prefWidth="694.0">
             <columns>
+                <TableColumn fx:id="BookingIDTableColumn" prefWidth="75.0" text="BookingID" />
                 <TableColumn fx:id="StartDateTableColumn" prefWidth="75.0" text="Start Date" />
                 <TableColumn fx:id="EndDateTableColumn" prefWidth="75.0" text="End Date" />
                 <TableColumn fx:id="AutoCamperIDTableColumn" prefWidth="106.0" text="AutoCamperID" />
