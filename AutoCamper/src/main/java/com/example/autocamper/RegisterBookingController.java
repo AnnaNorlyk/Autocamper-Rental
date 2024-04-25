@@ -1,11 +1,14 @@
 package com.example.autocamper;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class RegisterBookingController {
     public CheckBox SuperCoverPlusCheck;
-    public TableColumn AvailableAutoCampersTable;
     public MenuButton AutoCamperTypeMenu;
     public CheckBox BasicInsuranceCheck;
     public TextField EmailTextField;
@@ -15,12 +18,22 @@ public class RegisterBookingController {
     public MenuButton AutoCamperMenu;
     public TextField AddressTextField;
     public Button ReturnButton;
+    private HelloApplication helloApplication;
 
     public void setMainApplication(HelloApplication helloApplication) {
+        this.helloApplication = helloApplication;
     }
 
-    public void handleReturnButton(ActionEvent actionEvent) {
+    @FXML
+    private void handleReturnButton(ActionEvent event) {
+        try {
+            HelloApplication helloApplication1 = helloApplication;
+            helloApplication1.showStartPage();
+        } catch (Exception e) {
+            System.out.println("Error while returning to Start Page: " + e.getMessage());
+        }
     }
+
 
     public void handleSuperCoverPlusCheck(ActionEvent actionEvent) {
     }
@@ -58,4 +71,5 @@ public class RegisterBookingController {
 
     public void handleEndDate(ActionEvent actionEvent) {
     }
+
 }
