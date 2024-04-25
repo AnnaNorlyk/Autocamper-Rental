@@ -22,10 +22,6 @@
     </MenuButton>
     <DatePicker fx:id="DateOfBookingPicker" layoutX="268.0" layoutY="260.0" prefHeight="25.0" prefWidth="264.0"
                 promptText="Date of booking"/>
-    <!-- Adding end date field -->
-    <DatePicker fx:id="EndDatePicker" layoutX="268.0" layoutY="290.0" prefHeight="25.0" prefWidth="264.0"
-                promptText="End Date"/>
-    <!-- End of end date field -->
     <MenuButton fx:id="AutoCamperMenu" layoutX="268.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0"
                 prefWidth="264.0" text="AutoCamper">
         <items>

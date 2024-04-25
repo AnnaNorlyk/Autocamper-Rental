@@ -21,4 +21,38 @@ public class RegisterBookingController {
 
     public void handleReturnButton(ActionEvent actionEvent) {
     }
+
+    public void handleDateOfBookingPicker(ActionEvent actionEvent) {
+    }
+
+    public void handleSuperCoverPlusCheck(ActionEvent actionEvent) {
+    }
+
+    public void handleBasicInsuranceCheck(ActionEvent actionEvent) {
+    }
+
+    public void handleDateForBooking(ActionEvent actionEvent) {
+    }
+
+    public void handleSaveButton(ActionEvent actionEvent) {
+    }
+
+    public void handleAutoCamperTypeMenu(ActionEvent actionEvent) {
+    }
+
+    public void handleNameText(ActionEvent actionEvent) {
+    }
+
+    public void handleAlternativeName(ActionEvent actionEvent) {
+    }
+
+    public void handleAddressTextField(ActionEvent actionEvent) {
+    }
+
+    public void handleEmailTextField(ActionEvent actionEvent) {
+    }
+
+    public void handleAutoCamperMenu(ActionEvent actionEvent) {
+
+    }
 }
