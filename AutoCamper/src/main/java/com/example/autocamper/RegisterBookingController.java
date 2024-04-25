@@ -3,9 +3,6 @@ package com.example.autocamper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
 
 public class RegisterBookingController {
     public CheckBox SuperCoverPlusCheck;
@@ -30,6 +27,7 @@ public class RegisterBookingController {
             HelloApplication helloApplication1 = helloApplication;
             helloApplication1.showStartPage();
         } catch (Exception e) {
+            //Error message for troubleshooting
             System.out.println("Error while returning to Start Page: " + e.getMessage());
         }
     }
