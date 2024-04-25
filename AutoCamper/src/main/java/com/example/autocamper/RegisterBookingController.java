@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+
 public class RegisterBookingController {
     @FXML
     public CheckBox superCoverPlusCheck;
@@ -48,7 +49,7 @@ public class RegisterBookingController {
     public boolean basicInsurance;
     public boolean superCoverPlus;
 
-    public LocalDate dateOfBooking;
+    public DatePicker dateOfBooking;
 
 
     public void setMainApplication(HelloApplication helloApplication) {
@@ -203,7 +204,29 @@ public class RegisterBookingController {
         }
     }
 
-
-    public void handleAutoCamperTypeSelection(ActionEvent actionEvent) {
+    @FXML
+    private void handleAutoCamperTypeSelection(ActionEvent event) {
+        MenuItem source = (MenuItem) event.getSource();
+        autoCamperTypeMenu.setText(source.getText());
+        updateAutoCamperMenu(source.getText());
     }
+
+    private void updateAutoCamperMenu(String type) {
+        autoCamperMenu.getItems().clear();  // Clear existing items
+        int typeId = getTypeID(type);  // Method to convert type to an ID (int) for database retrieval
+
+    }
+
+    private int getTypeID(String type) {
+        switch (type) {
+            case "Basic": return 0;
+            case "Standard": return 1;
+            case "Luxury": return 2;
+            default: return -1;
+        }
+    }
+
+
+
+
 }
