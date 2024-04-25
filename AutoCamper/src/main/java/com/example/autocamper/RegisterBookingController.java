@@ -22,16 +22,10 @@ public class RegisterBookingController {
     public void handleReturnButton(ActionEvent actionEvent) {
     }
 
-    public void handleDateOfBookingPicker(ActionEvent actionEvent) {
-    }
-
     public void handleSuperCoverPlusCheck(ActionEvent actionEvent) {
     }
 
     public void handleBasicInsuranceCheck(ActionEvent actionEvent) {
-    }
-
-    public void handleDateForBooking(ActionEvent actionEvent) {
     }
 
     public void handleSaveButton(ActionEvent actionEvent) {
@@ -54,5 +48,14 @@ public class RegisterBookingController {
 
     public void handleAutoCamperMenu(ActionEvent actionEvent) {
 
+    }
+
+    public void handleDateOfBooking(ActionEvent actionEvent) {
+    }
+
+    public void handleStartDate(ActionEvent actionEvent) {
+    }
+
+    public void handleEndDate(ActionEvent actionEvent) {
     }
 }
