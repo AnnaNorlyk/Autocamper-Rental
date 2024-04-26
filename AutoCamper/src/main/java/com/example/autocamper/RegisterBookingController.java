@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class RegisterBookingController {
@@ -205,15 +206,27 @@ public class RegisterBookingController {
     }
 
     @FXML
-    private void handleAutoCamperTypeSelection(ActionEvent event) {
+    public void handleAutoCamperTypeSelection(ActionEvent event) {
         MenuItem source = (MenuItem) event.getSource();
         autoCamperTypeMenu.setText(source.getText());
         updateAutoCamperMenu(source.getText());
     }
 
-    private void updateAutoCamperMenu(String type) {
-        autoCamperMenu.getItems().clear();  // Clear existing items
+
+    public void updateAutoCamperMenu(String type) {
+        autoCamperMenu.getItems().clear();  // Clears existing items
         int typeId = getTypeID(type);  // Method to convert type to an ID (int) for database retrieval
+
+        try {
+            List<Integer> camperIDs = DBAccess.getAutoCampersByType(typeId); // Call method from DBAccess
+            for (Integer camperId : camperIDs) {
+                MenuItem newItem = new MenuItem("Camper:" + camperId);
+                autoCamperMenu.getItems().add(newItem);
+                newItem.setOnAction(this::handleAutoCamperMenuSelection); // Handles selection
+            }
+        } catch (SQLException e) {
+            System.out.println("Failed to retrieve camper IDs: " + e.getMessage());
+        }
 
     }
 
@@ -226,7 +239,9 @@ public class RegisterBookingController {
         }
     }
 
-
-
+    public void handleAutoCamperMenuSelection(ActionEvent event) {
+        MenuItem selected = (MenuItem) event.getSource();
+        System.out.println("Selected Camper: " + selected.getText());
+    }
 
 }

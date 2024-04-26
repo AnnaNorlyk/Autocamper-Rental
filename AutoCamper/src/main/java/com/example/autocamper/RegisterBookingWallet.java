@@ -4,10 +4,10 @@ package com.example.autocamper;
 import java.sql.*;
 
 
-
+//Class for accessing database
 public class RegisterBookingWallet {
 
-    private static final String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=YourDatabaseName";
+    private static final String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=RVTEST; encrypt=false";
     private static final String USERNAME = "sa";
     private static final String PASSWORD = "1234";
     private static Connection connection;
@@ -30,13 +30,6 @@ public class RegisterBookingWallet {
     }
 
 
-
-
-
-
-
-
-
     public static void rentRV(String name, String address, String email, int autocamperType, Date startDate, Date endDate, boolean basicInsurance, boolean superCoverPlus) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
@@ -46,7 +39,7 @@ public class RegisterBookingWallet {
             connection = getConnection();
 
             // insert customer information
-            String insertCustomerQuery = "INSERT INTO tblCustomer (fldCustomerName, fldCustomerAddress, fldCustomerEmail) VALUES (?, ?, ?)";
+            String insertCustomerQuery = "INSERT INTO tblCustomers (fldCustomerName, fldCustomerAddress, fldCustomerEmail) VALUES (?, ?, ?)";
             statement = connection.prepareStatement(insertCustomerQuery, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, name);
             statement.setString(2, address);
@@ -64,7 +57,7 @@ public class RegisterBookingWallet {
             }
 
             // Insert autocamper information
-            String insertAutoCamperQuery = "INSERT INTO tblAutoCamper (fldAutoCamperType) VALUES (?)";
+            String insertAutoCamperQuery = "INSERT INTO tblAutoCampers (fldAutoCamperType) VALUES (?)";
             statement = connection.prepareStatement(insertAutoCamperQuery, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, autocamperType);
             statement.executeUpdate();
@@ -80,7 +73,7 @@ public class RegisterBookingWallet {
             }
 
             // Insert rental information
-            String insertRentalQuery = "INSERT INTO tblRental (fldCustomerId, fldAutoCamperId, fldStartDate, fldEndDate) VALUES (?, ?, ?, ?)";
+            String insertRentalQuery = "INSERT INTO tblRentals (fldCustomerId, fldAutoCamperId, fldStartDate, fldEndDate) VALUES (?, ?, ?, ?)";
             statement = connection.prepareStatement(insertRentalQuery);
             statement.setInt(1, customerId);
             statement.setInt(2, autoCamperId);

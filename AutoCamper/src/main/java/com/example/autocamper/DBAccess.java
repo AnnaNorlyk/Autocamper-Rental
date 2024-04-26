@@ -1,10 +1,11 @@
 package com.example.autocamper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.autocamper.RegisterBookingWallet.getConnection;
 
 public class DBAccess
 {
@@ -26,4 +27,29 @@ public class DBAccess
             System.err.println("Error saving rental information: " + e.getMessage());
         }
     }
+
+    // Method to retrieve a list of autocamper IDs based on the type ID
+    public static List<Integer> getAutoCampersByType(int typeId) throws SQLException {
+        List<Integer> autocamperIDs = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = getConnection();
+            String query = "SELECT fldAutoCamperId FROM tblAutoCampers WHERE fldAutoCamperType = ?";
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, typeId);
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                autocamperIDs.add(resultSet.getInt("fldAutoCamperId"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error getting campers by type: " + e.getMessage());
+        }
+        return autocamperIDs;
+    }
+
 }
