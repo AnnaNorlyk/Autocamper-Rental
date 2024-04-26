@@ -25,10 +25,9 @@
         </MenuButton>
         <MenuButton fx:id="autoCamperTypeMenu" layoutX="209.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleAutoCamperTypeMenu" prefHeight="25.0" prefWidth="312.0" text="AutoCamper Type">
             <items>
-                <MenuItem mnemonicParsing="false" text="Basic" onAction="#handleAutoCamperTypeSelection"/>
-                <MenuItem mnemonicParsing="false" text="Standard" onAction="#handleAutoCamperTypeSelection"/>
-                <MenuItem mnemonicParsing="false" text="Luxury" onAction="#handleAutoCamperTypeSelection"/>
-
+                <MenuItem mnemonicParsing="false" text="Basic" />
+                <MenuItem mnemonicParsing="false" text="Standard" />
+                <MenuItem mnemonicParsing="false" text="Luxury" />
             </items>
         </MenuButton>
         <TextField fx:id="nameTextField" layoutX="208.0" layoutY="87.0" onAction="#handleNameText" prefHeight="25.0" prefWidth="312.0" text="Name" />
