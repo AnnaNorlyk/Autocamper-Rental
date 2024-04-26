@@ -3,14 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="800.0" style="-fx-background-color: #D8E4EC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autocamper.RegisterBookingController">
@@ -18,19 +14,8 @@
         <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleReturnButton" prefHeight="25.0" prefWidth="78.0" text="Return" />
         <CheckBox fx:id="superCoverPlusCheck" layoutX="209.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleSuperCoverPlusCheck" text="Super Cover Plus" />
         <CheckBox fx:id="basicInsuranceCheck" layoutX="208.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleBasicInsuranceCheck" text="Basic Insurance" />
-        <DatePicker fx:id="dateForBooking" layoutX="209.0" layoutY="273.0" onAction="#handleDateForBooking" prefHeight="25.0" prefWidth="312.0" />
-        <DatePicker fx:id="dateOfBookingPicker" layoutX="209.0" layoutY="235.0" onAction="#handleDateOfBookingPicker" prefHeight="25.0" prefWidth="312.0" />
-        <Label fx:id="availableAutoCampersLabel" alignment="CENTER" layoutX="559.0" layoutY="61.0" prefHeight="17.0" prefWidth="200.0" text="Available autocampers" textAlignment="CENTER">
-            <font>
-                <Font size="17.0" />
-            </font>
-        </Label>
-        <TableView fx:id="availableAutoCampersTable" layoutX="559.0" layoutY="87.0" prefHeight="288.0" prefWidth="200.0">
-            <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-            </columns>
-        </TableView>
+        <DatePicker fx:id="dateOfBooking" layoutX="209.0" layoutY="273.0" onAction="#handleDateOfBooking" prefHeight="25.0" prefWidth="312.0" promptText="Date of reservation being made" />
+        <DatePicker fx:id="startDatePicker" layoutX="209.0" layoutY="235.0" onAction="#handleStartDate" prefHeight="25.0" prefWidth="147.0" promptText="Start date" />
         <Button fx:id="saveButton" layoutX="328.0" layoutY="477.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="25.0" prefWidth="73.0" text="Save" />
         <MenuButton fx:id="autoCamperMenu" layoutX="208.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleAutoCamperMenu" prefHeight="25.0" prefWidth="312.0" text="AutoCamper ">
             <items>
@@ -40,13 +25,16 @@
         </MenuButton>
         <MenuButton fx:id="autoCamperTypeMenu" layoutX="209.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleAutoCamperTypeMenu" prefHeight="25.0" prefWidth="312.0" text="AutoCamper Type">
             <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" text="Basic" onAction="#handleAutoCamperTypeSelection"/>
+                <MenuItem mnemonicParsing="false" text="Standard" onAction="#handleAutoCamperTypeSelection"/>
+                <MenuItem mnemonicParsing="false" text="Luxury" onAction="#handleAutoCamperTypeSelection"/>
+
             </items>
         </MenuButton>
         <TextField fx:id="nameTextField" layoutX="208.0" layoutY="87.0" onAction="#handleNameText" prefHeight="25.0" prefWidth="312.0" text="Name" />
         <TextField fx:id="AltNameTextField" layoutX="208.0" layoutY="125.0" onAction="#handleAlternativeName" prefHeight="25.0" prefWidth="312.0" text="(Optional) Alternative Name" />
         <TextField fx:id="addressTextField" layoutX="209.0" layoutY="199.0" onAction="#handleAddressTextField" prefHeight="25.0" prefWidth="312.0" text="Address" />
         <TextField fx:id="emailTextField" layoutX="209.0" layoutY="160.0" onAction="#handleEmailTextField" prefHeight="25.0" prefWidth="312.0" text="Email" />
+        <DatePicker fx:id="endDatePicker" layoutX="374.0" layoutY="235.0" onAction="#handleEndDate" prefHeight="25.0" prefWidth="147.0" promptText="End date" />
     </children>
 </AnchorPane>

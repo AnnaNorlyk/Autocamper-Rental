@@ -3,7 +3,7 @@ package com.example.autocamper;
 
 import java.sql.*;
 
-import static java.sql.DriverManager.getConnection;
+
 
 public class RegisterBookingWallet {
 
@@ -29,7 +29,15 @@ public class RegisterBookingWallet {
         return connection;
     }
 
-    public static void rentRV(String name, String address, String email, int autocamperType, Date startDate, Date endDate) throws SQLException {
+
+
+
+
+
+
+
+
+    public static void rentRV(String name, String address, String email, int autocamperType, Date startDate, Date endDate, boolean basicInsurance, boolean superCoverPlus) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
 

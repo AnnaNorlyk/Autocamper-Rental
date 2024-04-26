@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0"
-            prefWidth="800.0" style="-fx-background-color: #D8E4EC;" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autocamper.StartPageController">
-    <Button fx:id="NewBookingButton" layoutX="679.0" layoutY="492.0" mnemonicParsing="false"
-            text="New booking" onAction="#handleNewBookingButton"/>
-    <TableView fx:id="CalendarTableView" layoutX="34.0" layoutY="92.0" prefHeight="383.0" prefWidth="733.0">
-        <columns>
-            <TableColumn prefWidth="75.0" text="Week"/>
-            <TableColumn prefWidth="150.0" text="AutoCamper"/>
-            <TableColumn prefWidth="137.0" text="Customer"/>
-            <TableColumn prefWidth="370.0" text="Email"/>
-        </columns>
-    </TableView>
-    <Label layoutX="43.0" layoutY="27.0" prefHeight="54.0" prefWidth="365.0" text="AutoCamper Rental">
-        <font>
-            <Font name="Leelawadee UI Bold" size="34.0"/>
-        </font>
-    </Label>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="800.0" style="-fx-background-color: #D8E4EC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.autocamper.StartPageController">
+    <children>
+        <Label layoutX="236.0" layoutY="30.0" text="AutoCamper Rental">
+            <font>
+                <Font name="Leelawadee UI" size="38.0" />
+            </font>
+        </Label>
+        <TableView fx:id="C" layoutX="53.0" layoutY="93.0" prefHeight="362.0" prefWidth="694.0">
+            <columns>
+                <TableColumn fx:id="BookingIDTableColumn" prefWidth="75.0" text="BookingID" />
+                <TableColumn fx:id="StartDateTableColumn" prefWidth="75.0" text="Start Date" />
+                <TableColumn fx:id="EndDateTableColumn" prefWidth="75.0" text="End Date" />
+                <TableColumn fx:id="AutoCamperIDTableColumn" prefWidth="106.0" text="AutoCamperID" />
+                <TableColumn fx:id="CustomerNameTableColumn" prefWidth="131.0" text="Customer Name" />
+                <TableColumn fx:id="EmailTableColumn" minWidth="0.0" prefWidth="306.0" text="Email" />
+            </columns>
+        </TableView>
+        <Button fx:id="NewBookingButton" layoutX="494.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleNewBookingButton" prefHeight="25.0" prefWidth="123.0" text="New Booking" />
+        <Button fx:id="DeleteBookingButton" layoutX="624.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleDeleteBooking" prefHeight="25.0" prefWidth="123.0" text="Delete Booking" />
+    </children>
 </AnchorPane>
+
